@@ -9,7 +9,9 @@ function solution(s) {
     // 4. 변환된 리스트를 다시 한 단어로 조립 .join("")
     //              ex) ["A", "p", "P", "l", "E"] => "ApPlE"
     // 5. 조립된 단어들을 다시 하나의 문자열로 조립 .join(" ")
-    return tmp = s.split(" ").map(x => (x.split("").map((y, idx) => idx%2===0 ? y.toUpperCase() : y.toLowerCase())).join("")).join(" ");
+    return s.split(" ").map(x => (x.split("").map((y, idx) => idx%2===0 ? y.toUpperCase() : y.toLowerCase())).join("")).join(" ");
 }
 
-console.log(solution("hElLo worLd hello        java sc     ript"));
+// 스터디 후: 이중 map 없이 구현 시도해보고 아래에 작성예정
+
+console.log(another_solution("hElLo worLd hello        java sc     ript"));

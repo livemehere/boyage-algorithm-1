@@ -3,7 +3,7 @@
 
 function solution(n){
     // 문자열로 만든 다음 1자씩 쪼개고 모두 더함.
-    return n_str = String(n).split("").reduce((partialSum, a) => partialSum + parseInt(a), 0);
+    return n_str = String(n).split("").reduce((sum, x) => sum + parseInt(x), 0);
 }
 
 // 3+1+4+1+5+9+2+6+5+3+5
