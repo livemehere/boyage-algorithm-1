@@ -2,7 +2,6 @@
 // https://programmers.co.kr/learn/courses/30/lessons/42840?language=javascript
 
 // 나의 풀이
-// 내가 조금 더 빠른 것을 위안삼는다..
 function solution(answers) {
     let answer = []
     let seongjeokpyo = [0, 0, 0]
