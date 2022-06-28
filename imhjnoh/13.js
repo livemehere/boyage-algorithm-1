@@ -1,4 +1,4 @@
-// 3진법 뒤집기
+// 연습문제: 3진법 뒤집기
 // https://programmers.co.kr/learn/courses/30/lessons/68935
 
 function solution(n) {
