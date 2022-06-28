@@ -1,22 +1,43 @@
 function solution(answers) {
-  var answer = [];
-  var a1 = [1, 2, 3, 4, 5];
-  var a2 = [2, 1, 2, 3, 2, 4, 2, 5];
-  var a3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5];
+  const answer = [];
+  const check = [0, 0, 0];
+  const first = [1, 2, 3, 4, 5];
+  const second = [2, 1, 2, 3, 2, 4, 2, 5];
+  const third = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5];
 
-  var a1c = answers.filter((a, i) => a === a1[i % a1.length]).length;
-  var a2c = answers.filter((a, i) => a === a2[i % a2.length]).length;
-  var a3c = answers.filter((a, i) => a === a3[i % a3.length]).length;
-  var max = Math.max(a1c, a2c, a3c);
+  for (let i = 0, j = 0; i < answers.length; i++, j++) {
+    if (j > first.length - 1) {
+      j = 0;
+    }
 
-  if (a1c === max) {
-    answer.push(1);
+    if (answers[i] == first[j]) {
+      check[0]++;
+    }
   }
-  if (a2c === max) {
-    answer.push(2);
+  for (let i = 0, j = 0; i < answers.length; i++, j++) {
+    if (j > second.length - 1) {
+      j = 0;
+    }
+
+    if (answers[i] == second[j]) {
+      check[1]++;
+    }
   }
-  if (a3c === max) {
-    answer.push(3);
+  for (let i = 0, j = 0; i < answers.length; i++, j++) {
+    if (j > third.length - 1) {
+      j = 0;
+    }
+
+    if (answers[i] == third[j]) {
+      check[2]++;
+    }
   }
+
+  for (let i = 0; i < check.length; i++) {
+    if (check[i] == Math.max(...check)) {
+      answer.push(i + 1);
+    }
+  }
+
   return answer;
 }
